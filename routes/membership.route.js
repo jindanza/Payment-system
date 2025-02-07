@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const membershipController = require("../controllers/membership.controller");
 const { auth } = require("../middleware/auth");
-const upload = require("../middleware/upload");
 const uploadHandler = require("../middleware/upload");
 
 router.post("/registration", membershipController.registration);
