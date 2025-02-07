@@ -7,383 +7,374 @@
 	},
 	"item": [
 		{
-			"name": "registration",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"jindan@gmail.com\",\r\n  \"first_name\": \"Muhammad\",\r\n  \"last_name\": \"Jindan\",\r\n  \"password\": \"12345678\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "membership",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"jindan@gmail.com\",\r\n  \"first_name\": \"Muhammad\",\r\n  \"last_name\": \"Jindan\",\r\n  \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/membership/registration",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"membership",
+								"registration"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/membership/registration",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"membership",
-						"registration"
-					]
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"jindan@gmail.com\",\r\n  \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/membership/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"membership",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Muhammad edit\",\r\n  \"last_name\": \"Jindan edit\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/membership/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"membership",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update image profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profile_image",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/product/pulpen.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/membership/profile/image",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"membership",
+								"profile",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/membership/profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"membership",
+								"profile"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"jindan@gmail.com\",\r\n  \"password\": \"12345678\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "information",
+			"item": [
+				{
+					"name": "banner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/information/banner",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"information",
+								"banner"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/membership/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"membership",
-						"login"
-					]
+				{
+					"name": "services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/information/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"information",
+								"services"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "banner",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/information/banner",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"information",
-						"banner"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "services",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/information/services",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"information",
-						"services"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update profile",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"first_name\": \"Muhammad profile\",\r\n  \"last_name\": \"Jindan profile\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/membership/profile",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"membership",
-						"profile"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update image profile",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "profile_image",
-							"type": "file",
-							"src": "/C:/Users/User/Downloads/vbg.png"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:3000/membership/profile/image",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"membership",
-						"profile",
-						"image"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "profile",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/membership/profile",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"membership",
-						"profile"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "balance",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/transaction/balance",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"transaction",
-						"balance"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "topup",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"top_up_amount\": 100000\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/transaction/topup",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"transaction",
-						"topup"
-					]
-				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "transaction",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"service_code\": \"PAKET_DATA\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/transaction/transaction",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"transaction",
-						"transaction"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "transaction history",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImVtYWlsIjoiamluZGFuQGdtYWlsLmNvbSIsImlhdCI6MTczODg1ODU2MCwiZXhwIjoxNzM4OTAxNzYwfQ.0LLXN9YyWHf61biDStAvs5RZ07h7jxsGszk9rDuLa50",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/transaction/transaction/history",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"transaction",
-						"transaction",
-						"history"
-					],
-					"query": [
-						{
-							"key": "limit",
-							"value": "2",
-							"disabled": true
+			"item": [
+				{
+					"name": "balance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
 						},
-						{
-							"key": "offset",
-							"value": "2",
-							"disabled": true
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/transaction/balance",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transaction",
+								"balance"
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "topup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"top_up_amount\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transaction/topup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transaction",
+								"topup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"service_code\": \"PAJAK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/transaction/transaction",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transaction",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transaction history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaW5kYW5AZ21haWwuY29tIiwiaWF0IjoxNzM4OTA4ODczLCJleHAiOjE3Mzg5NTIwNzN9.GnyLsbytewzjHLVncqUGWz0ZNgV8mA8dORnxgij6GCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/transaction/transaction/history?limit=2&offset=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transaction",
+								"transaction",
+								"history"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "welcome",
@@ -391,12 +382,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/",
-					"protocol": "http",
+					"raw": "{{base_url}}/",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "3000",
 					"path": [
 						""
 					]
